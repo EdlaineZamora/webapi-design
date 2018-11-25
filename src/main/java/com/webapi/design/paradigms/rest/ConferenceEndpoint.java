@@ -39,29 +39,29 @@ public class ConferenceEndpoint {
     }
 
     @PutMapping(value = "{conferenceId}")
-    public ConferenceData replaceConferenceById(@PathVariable Integer conferenceId, @RequestBody ConferenceData conferenceData) {
+    public ConferenceData refreshAllConferenceFieldsById(@PathVariable Integer conferenceId, @RequestBody ConferenceData conferenceData) {
         ConferenceData conferenceToUpdate = conferenceData;
 
         Optional<ConferenceData> conferenceFromDatabase = conferenceRepository.findById(conferenceId);
         if (conferenceFromDatabase.isPresent()) {
-            conferenceToUpdate = conferenceFromDatabase.get().cloneReplacingAllFields(conferenceData);
+            conferenceToUpdate = conferenceFromDatabase.get().cloneUpdatingAllFields(conferenceData);
         }
         return conferenceRepository.save(conferenceToUpdate);
     }
 
     @PatchMapping(value = "{conferenceId}")
-    public ConferenceData partiallyRefreshConferenceById(@PathVariable Integer conferenceId, @RequestBody ConferenceData conferenceData) {
+    public ConferenceData partiallyRefreshExistingConferenceFieldsById(@PathVariable Integer conferenceId, @RequestBody ConferenceData conferenceData) {
         ConferenceData conferenceToUpdate = conferenceData;
 
         Optional<ConferenceData> conferenceFromDatabase = conferenceRepository.findById(conferenceId);
         if (conferenceFromDatabase.isPresent()) {
-            conferenceToUpdate = conferenceFromDatabase.get().cloneReplacingExistingFields(conferenceData);
+            conferenceToUpdate = conferenceFromDatabase.get().cloneUpdatingExistingFields(conferenceData);
         }
         return conferenceRepository.save(conferenceToUpdate);
     }
 
     @DeleteMapping(value = "{conferenceId}")
-    public void partiallyRefreshConferenceById(@PathVariable Integer conferenceId) {
+    public void deleteConferenceById(@PathVariable Integer conferenceId) {
         conferenceRepository.deleteById(conferenceId);
     }
 

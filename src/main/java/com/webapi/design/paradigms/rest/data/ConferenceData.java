@@ -41,11 +41,11 @@ public class ConferenceData {
         return talks;
     }
 
-    public ConferenceData cloneReplacingAllFields(ConferenceData conferenceData) {
+    public ConferenceData cloneUpdatingAllFields(ConferenceData conferenceData) {
         return new ConferenceData(id, conferenceData.getName(), conferenceData.getTalks());
     }
 
-    public ConferenceData cloneReplacingExistingFields(ConferenceData conferenceData) {
+    public ConferenceData cloneUpdatingExistingFields(ConferenceData conferenceData) {
         ConferenceData resultantConference = new ConferenceData(id, name, talks);
 
         if (nonNull(conferenceData.getName())) {
