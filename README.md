@@ -14,7 +14,7 @@ The project is still under construction and will be done incrementally.
 * Spring Devtools
 * H2 Database
 
-## **API Paradigms applied in this project**
+## **API Paradigms**
 ### **REST (Representational State Transfer)**
 
 This style is resource-based, where the URI is expressed by nouns and not verbs. It is also based on HTTP methods, where each verb has a different meaning than the API should respect. Below are some examples of requests.
