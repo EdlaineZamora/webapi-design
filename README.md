@@ -17,12 +17,14 @@ The project is still under construction and will be done incrementally.
 ## **API Paradigms applied in this project**
 ### **REST (Representational State Transfer)**
 
-For the REST paradigm, the Conference domain was used, where there are conferences that have a list of talks.
+This style is resource-based, where the URI is expressed by nouns and not verbs. It is also based on HTTP methods, where each verb has a different meaning than the API should respect. Below are some examples of requests.
+
+For the examples, the Conference domain was used, where there are conferences that have a list of talks.
 
 ##### Getting All Conferences Endpoint
 ```javascript
 GET /conferences/ HTTP/1.1
-Host: localhost
+Host: localhost:8080
 ```
 
 
@@ -82,3 +84,20 @@ Host: localhost:8080
 ```
 
 ### **RPC (Remote Procedure Call)**
+The requests are action-based (unlike REST that is resource-based). This style is indicated for APIs that exposes many actions and that would be difficult to map with RESTs resources.
+
+For this example, a conversation domain was used (like a Slack). Each conversation can undergo a series of commands (such as archive, close, exit, etc.).
+
+##### Archiving Conversation by Id Endpoint
+```javascript
+POST /conversations/5/archive HTTP/1.1
+Host: localhost:8080
+```
+
+##### Closing Conversation by Id Endpoint
+```javascript
+POST /conversations/5/close HTTP/1.1
+Host: localhost:8080
+```
+
+### **GraphQL**
