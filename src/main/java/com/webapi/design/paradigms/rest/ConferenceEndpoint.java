@@ -50,7 +50,7 @@ public class ConferenceEndpoint {
     }
 
     @PatchMapping(value = "{conferenceId}")
-    public ConferenceData partiallyRefreshExistingConferenceFieldsById(@PathVariable Integer conferenceId, @RequestBody ConferenceData conferenceData) {
+    public ConferenceData refreshExistingConferenceFieldsById(@PathVariable Integer conferenceId, @RequestBody ConferenceData conferenceData) {
         ConferenceData conferenceToUpdate = conferenceData;
 
         Optional<ConferenceData> conferenceFromDatabase = conferenceRepository.findById(conferenceId);
