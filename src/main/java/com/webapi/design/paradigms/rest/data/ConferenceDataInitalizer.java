@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import static com.webapi.design.paradigms.rest.data.ConferenceData.ConferenceResponseBuilder.aConferenceResponse;
 
 @Component
-public class DataInitalizer implements ApplicationRunner {
+public class ConferenceDataInitalizer implements ApplicationRunner {
 
     @Autowired
 	private ConferenceRepository conferenceRepository;

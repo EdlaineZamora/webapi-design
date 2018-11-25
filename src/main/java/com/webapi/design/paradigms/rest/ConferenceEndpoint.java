@@ -30,7 +30,8 @@ public class ConferenceEndpoint {
 
     @GetMapping(value = "{conferenceId}")
     public ConferenceData getConferenceById(@PathVariable Integer conferenceId) {
-        return conferenceRepository.findById(conferenceId).get();
+        return conferenceRepository.findById(conferenceId)
+                .orElseThrow(() -> new RuntimeException("Has no conference with id " + conferenceId));
     }
 
     @PostMapping
