@@ -13,6 +13,7 @@ The project is still under construction and will be done incrementally.
 * Spring Web
 * Spring Devtools
 * H2 Database
+* Graphql-java
 
 ## **API Paradigms**
 ### **REST (Representational State Transfer)**
@@ -101,3 +102,8 @@ Host: localhost:8080
 ```
 
 ### **GraphQL**
+
+Here you can find the GraphQL Java documentation for moer details.
+
+[GraphQL-Java](https://www.graphql-java.com/documentation/)
+
