@@ -92,6 +92,8 @@ For this example, a conversation domain was used (like a Slack). Each conversati
 Here you can find a good example of RPC-Style API:
 [Slack RPC-Style API](https://api.slack.com/web)
 
+And in this project you can find some simple examples of endpoints with the RPC-Style, as follows:
+
 ##### Getting All Conversations Endpoint
 ```javascript
 GET /conversations/list
