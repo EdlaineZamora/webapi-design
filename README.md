@@ -88,6 +88,14 @@ The requests are action-based (unlike REST that is resource-based). This style i
 
 For this example, a conversation domain was used (like a Slack). Each conversation can undergo a series of commands (such as archive, close, exit, etc.).
 
+##### Getting All Conversations Endpoint
+GET /conversations/list HTTP/1.1
+Host: localhost:8080
+
+##### Getting Conversation by Id Endpoint
+GET /conversations/list?id=5 HTTP/1.1
+Host: localhost:8080
+
 ##### Archiving Conversation by Id Endpoint
 ```javascript
 POST /conversations/5/archive HTTP/1.1
