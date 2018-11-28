@@ -24,14 +24,14 @@ For the examples, the Conference domain was used, where there are conferences th
 
 ##### Getting All Conferences Endpoint
 ```javascript
-GET /conferences/ HTTP/1.1
+GET /conferences/
 Host: localhost:8080
 ```
 
 
 ##### Creating a Conference
 ```javascript
-POST /conferences/ HTTP/1.1
+POST /conferences/
 Host: localhost:8080
 Content-Type: application/json
 {
@@ -46,7 +46,7 @@ Content-Type: application/json
 
 ##### Fully updating a Conference
 ```javascript
-PUT /conferences/3 HTTP/1.1
+PUT /conferences/3
 Host: localhost:8080
 Content-Type: application/json
 {
@@ -64,7 +64,7 @@ Content-Type: application/json
 
 ##### Partially updating a Conference
 ```javascript
-PATCH /conferences/3 HTTP/1.1
+PATCH /conferences/3
 Host: localhost:8080
 Content-Type: application/json
 {
@@ -74,13 +74,13 @@ Content-Type: application/json
 
 ##### Deleting a Conference
 ```javascript
-DELETE /conferences/3 HTTP/1.1
+DELETE /conferences/3
 Host: localhost:8080
 ```
 
 ##### Getting All Talks from a Conference with Id 3
 ```javascript
-GET /conferences/3/talks HTTP/1.1
+GET /conferences/3/talks
 Host: localhost:8080
 ```
 
@@ -89,27 +89,30 @@ The requests are action-based (unlike REST that is resource-based). This style i
 
 For this example, a conversation domain was used (like a Slack). Each conversation can undergo a series of commands (such as archive, close, exit, etc.).
 
+Here you can find a good example of RPC-Style API:
+[Slack RPC-Style API](https://api.slack.com/web)
+
 ##### Getting All Conversations Endpoint
 ```javascript
-GET /conversations/list HTTP/1.1
+GET /conversations/list
 Host: localhost:8080
 ```
 
 ##### Getting Conversation by Id Endpoint
 ```javascript
-GET /conversations/list?id=5 HTTP/1.1
+GET /conversations/list?id=5
 Host: localhost:8080
 ```
 
 ##### Archiving Conversation by Id Endpoint
 ```javascript
-POST /conversations/list/archive?id=5 HTTP/1.1
+POST /conversations/list/archive?id=5
 Host: localhost:8080
 ```
 
 ##### Closing Conversation by Id Endpoint
 ```javascript
-POST /conversations/list/close?id=5 HTTP/1.1
+POST /conversations/list/close?id=5
 Host: localhost:8080
 ```
 
