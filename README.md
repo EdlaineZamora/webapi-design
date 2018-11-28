@@ -102,13 +102,13 @@ Host: localhost:8080
 
 ##### Archiving Conversation by Id Endpoint
 ```javascript
-POST /conversations/5/archive HTTP/1.1
+POST /conversations/list/archive?id=5 HTTP/1.1
 Host: localhost:8080
 ```
 
 ##### Closing Conversation by Id Endpoint
 ```javascript
-POST /conversations/5/close HTTP/1.1
+POST /conversations/list/close?id=5 HTTP/1.1
 Host: localhost:8080
 ```
 
